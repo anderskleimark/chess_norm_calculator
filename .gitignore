@@ -1,0 +1,6 @@
+# Ignorera objektfiler
+*.o
+
+# Ignorera exekverbara binären
+chess_norm_calculator
+
