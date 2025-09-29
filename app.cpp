@@ -42,7 +42,9 @@ std::vector<NormResult> App::getNormsPoints() const
 
         auto calcPoints = [&](double normRating) 
         {
-            return 0.5 * rounds + ((normRating - avgRating) * rounds) / 800.0;
+            double raw = 0.5 * rounds + ((normRating - avgRating) * rounds) / 800.0;
+            // multiplicera med 2, runda till närmaste heltal, och dela tillbaka
+            return std::ceil(raw * 2.0) / 2.0;
         };
 
         results.push_back
